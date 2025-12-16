@@ -1,4 +1,5 @@
-export const BASE_URL = "https://finsight-2-q5qp.onrender.com";
+// Use Vite environment variable for backend URL
+export const BASE_URL = import.meta.env.VITE_API_URL || "https://finsight-2-q5qp.onrender.com";
 
 // utils/apiPaths.js
 export const API_PATHS = {
