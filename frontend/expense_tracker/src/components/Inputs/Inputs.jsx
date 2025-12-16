@@ -1,5 +1,5 @@
-import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6';
-import React, { useState } from 'react';
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import React, { useState } from "react";
 
 const Input = ({ value, onChange, label, placeholder, type = "text" }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,7 +11,7 @@ const Input = ({ value, onChange, label, placeholder, type = "text" }) => {
   return (
     <div className="mb-4">
       {label && (
-        <label className="text-[13px] text-slate-800 block mb-1">
+        <label className="text-[13px] text-slate-800 dark:text-gray-300 block mb-1">
           {label}
         </label>
       )}
@@ -20,8 +20,10 @@ const Input = ({ value, onChange, label, placeholder, type = "text" }) => {
         <input
           value={value}
           onChange={onChange}
-          className="w-full bg-transparent outline-none border border-gray-300 p-2 rounded-md"
-          type={type === "password" ? (showPassword ? "text" : "password") : type}
+          className="w-full bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 outline-none border border-gray-300 dark:border-gray-700 p-2 rounded-md placeholder-gray-400 dark:placeholder-gray-500"
+          type={
+            type === "password" ? (showPassword ? "text" : "password") : type
+          }
           placeholder={placeholder}
         />
 

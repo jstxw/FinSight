@@ -26,7 +26,7 @@ const SideMenu = ({ activeMenu }) => {
   };
 
   return (
-    <div className="w-64 h-[calc(100vh-61px)] bg-white border-r border-gray-200/50 p-5 sticky top-[61px] z-20">
+    <div className="w-64 min-h-screen bg-white dark:bg-gray-900 border-r border-gray-200/50 dark:border-gray-700 p-5 overflow-y-auto">
       <div className="flex flex-col items-center justify-center gap-3 mt-3 mb-7">
         {user?.profileImageUrl ? (
           <img
@@ -42,7 +42,7 @@ const SideMenu = ({ activeMenu }) => {
             stlye="text-xl"
           />
         )}
-        <h5 className="text-gray-950 font-medium leading-6">
+        <h5 className="text-gray-950 dark:text-gray-100 font-medium leading-6">
           {user?.fullName || "Guest User"}
         </h5>
       </div>
@@ -50,9 +50,11 @@ const SideMenu = ({ activeMenu }) => {
         <button
           key={`menu_${index}`}
           className={`w-full flex items-center gap-4 text-[15px] px-4 py-2 rounded-lg mb-3 transition-colors duration-300
-            ${activeMenu === item.label
-              ? 'text-white bg-purple-700'
-              : 'text-black bg-white hover:bg-purple-700 hover:text-white'}
+            ${
+              activeMenu === item.label
+                ? "text-white bg-purple-700"
+                : "text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 hover:bg-purple-700 hover:text-white"
+            }
           `}
           onClick={() => handleClick(item.path)}
         >

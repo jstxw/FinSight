@@ -25,7 +25,7 @@ const AddIncomeForm = ({ onAddIncome }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Source
         </label>
         <input
@@ -33,13 +33,13 @@ const AddIncomeForm = ({ onAddIncome }) => {
           name="source"
           value={income.source}
           onChange={handleChange}
-          className="w-full px-3 py-2 border rounded-md"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           required
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
           Amount
         </label>
         <input
@@ -47,19 +47,21 @@ const AddIncomeForm = ({ onAddIncome }) => {
           name="amount"
           value={income.amount}
           onChange={handleChange}
-          className="w-full px-3 py-2 border rounded-md"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           required
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">Date</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+          Date
+        </label>
         <input
           type="date"
           name="date"
           value={income.date}
           onChange={handleChange}
-          className="w-full px-3 py-2 border rounded-md"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           required
         />
       </div>

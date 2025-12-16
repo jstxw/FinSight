@@ -43,11 +43,20 @@ exports.getAllIncome = async (req, res) => {
 
 //Delete income sources
 exports.deleteIncome = async (req, res) => {
+    const userId = req.user.id;
     try {
-        await Income.findByIdAndDelete(req.params.id);
+        const income = await Income.findOneAndDelete({
+            _id: req.params.id,
+            userId: userId
+        });
+
+        if (!income) {
+            return res.status(404).json({ message: "Income not found or not authorized" });
+        }
+
         res.json({ message: "Income deleted successfully" });
-        } catch (error) {
-    res.status(500).json({ message: "Server Error" });
+    } catch (error) {
+        res.status(500).json({ message: "Server Error" });
     }
 };
 

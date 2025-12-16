@@ -20,10 +20,14 @@
         overflow-x: hidden;
         
     }
+
+    .dark body {
+        background-color: #0f172a;
+    }
 }
 
 .input-box{
-    @apply w-full flex justify-between gap-3 text-sm text-black bg-slate-400 rounded px-4 py-3 mb-4 mt-3 border border-slate-600 outline-none;
+    @apply w-full flex justify-between gap-3 text-sm text-gray-900 bg-white rounded px-4 py-3 mb-4 mt-3 border border-gray-300 outline-none dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600;
 }
 
 .btn-primary {
@@ -31,18 +35,93 @@
 }
 
 .card{
-    @apply bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50
+    @apply bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-900/30
 }
 
 .card-btn {
-    @apply flex items-center gap-3 text-[12px] font-medium text-shadow-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1.5 rounded-lg border border-gray-200/50 cursor-pointer;
+    @apply flex items-center gap-3 text-[12px] font-medium text-shadow-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1.5 rounded-lg border border-gray-200/50 cursor-pointer dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 dark:hover:bg-purple-900/30 dark:hover:text-purple-400;
 }
 
 
 .add-btn {
-  @apply flex items-center gap-1.5 text-xs md:text-sm font-medium text-shadow-purple-600 whitespace-nowrap bg-purple-50 border-purple-100 rounded-lg px-4 py-2 cursor-pointer ;
+  @apply flex items-center gap-1.5 text-xs md:text-sm font-medium text-shadow-purple-600 whitespace-nowrap bg-purple-50 border-purple-100 rounded-lg px-4 py-2 cursor-pointer dark:bg-purple-900/30 dark:text-purple-400 dark:border-purple-800;
 }
 
 .add-btn-fill {
-    @apply text-white bg-gray-50
+    @apply text-white bg-purple-600 dark:bg-purple-700
+}
+
+/* Dark Aurora Theme - Landing Page Only */
+.aurora-page {
+    --bg-0: #05060b;
+    --bg-1: #070914;
+    --surface: #0b0f1f;
+    --surface-2: #0f1630;
+    --border: rgba(255,255,255,.08);
+    --border-strong: rgba(255,255,255,.12);
+    --text: #f2f4ff;
+    --muted: rgba(242,244,255,.68);
+    --muted-2: rgba(242,244,255,.52);
+    --brand: #7c3aed;
+    --brand-2: #a78bfa;
+    --brand-3: #4f46e5;
+    --glow: rgba(124,58,237,.28);
+    --glow-2: rgba(79,70,229,.20);
+}
+
+.aurora-page {
+    background-color: var(--bg-0);
+    color: var(--text);
+}
+
+.aurora-glow {
+    position: relative;
+}
+
+.aurora-glow::before {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(ellipse at 50% 0%, var(--glow) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, var(--glow-2) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, var(--glow) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glass-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background: var(--surface-2);
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+}
+
+.aurora-btn-primary {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-3) 100%);
+    color: white;
+    box-shadow: 0 4px 24px var(--glow);
+    transition: all 0.3s ease;
+}
+
+.aurora-btn-primary:hover {
+    box-shadow: 0 8px 32px var(--glow);
+    transform: translateY(-2px);
+}
+
+.aurora-btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+.aurora-btn-secondary:hover {
+    background: var(--surface);
+    border-color: var(--brand-2);
 }

@@ -11,19 +11,19 @@ const Modal = ({ children, isOpen, onClose, title }) => {
       aria-labelledby="modal-title"
     >
       <div className="relative w-full max-w-2xl mx-auto p-4">
-        <div className="relative bg-white rounded-lg shadow-lg dark:bg-white">
+        <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg">
           {/* Modal Header */}
           <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-600 p-4 md:p-5 rounded-t">
             <h3
               id="modal-title"
-              className="text-lg font-semibold text-black dark:bg-white"
+              className="text-lg font-semibold text-black dark:text-gray-100"
             >
               {title}
             </h3>
             <button
               type="button"
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors"
+              className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
               aria-label="Close modal"
             >
               <svg

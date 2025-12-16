@@ -41,11 +41,20 @@ exports.getAllExpense = async (req, res) => {
 
 //Delete Expense sources
 exports.deleteExpense = async (req, res) => {
+    const userId = req.user.id;
     try {
-        await Expense.findByIdAndDelete(req.params.id);
+        const expense = await Expense.findOneAndDelete({
+            _id: req.params.id,
+            userId: userId
+        });
+
+        if (!expense) {
+            return res.status(404).json({ message: "Expense not found or not authorized" });
+        }
+
         res.json({ message: "Expense deleted successfully" });
-        } catch (error) {
-    res.status(500).json({ message: "Server Error" });
+    } catch (error) {
+        res.status(500).json({ message: "Server Error" });
     }
 };
 

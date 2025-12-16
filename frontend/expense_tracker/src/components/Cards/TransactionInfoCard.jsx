@@ -24,8 +24,8 @@ const TransactionInfoCard = ({
   };
 
   return (
-    <div className="group relative flex items-center gap-4 mt-2 p-3 rounded-lg hover:bg-gray-100">
-      <div className="w-12 h-12 flex items-center justify-center text-xl text-gray-800 bg-gray-100 rounded-2xl">
+    <div className="group relative flex items-center gap-4 mt-2 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+      <div className="w-12 h-12 flex items-center justify-center text-xl text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-2xl">
         {icon ? (
           <img src={icon} alt={title} className="w-6 h-6" />
         ) : (
@@ -35,7 +35,9 @@ const TransactionInfoCard = ({
 
       <div className="flex-1 flex items-center justify-between">
         <div>
-          <p className="text-sm text-gray-700 font-medium">{title}</p>
+          <p className="text-sm text-gray-700 dark:text-gray-200 font-medium">
+            {title}
+          </p>
           <p className=" text-xs text-gray-400 mt-1">{date}</p>
         </div>
 
