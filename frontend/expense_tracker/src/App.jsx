@@ -21,27 +21,27 @@ const App = () => {
   return (
     <ThemeProvider>
       <UserProvider>
-      <div>
-        <Router>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/Login" exact element={<Login />} />
-            <Route path="/SignUp" exact element={<SignUp />} />
-            <Route path="/Home" exact element={<Home />} />
-            <Route path="/Income" exact element={<Income />} />
-            <Route path="/Expense" exact element={<Expense />} />
-            <Route path="/Dashboard" exact element={<Home />} />
-          </Routes>
-        </Router>
-      </div>
-      <Toaster
-        toastOptions={{
-          className: "",
-          style: {
-            fontSize: "13px",
-          },
-        }}
-      />
+        <div>
+          <Router>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/Login" exact element={<Login />} />
+              <Route path="/SignUp" exact element={<SignUp />} />
+              <Route path="/Home" exact element={<Home />} />
+              <Route path="/Income" exact element={<Income />} />
+              <Route path="/Expense" exact element={<Expense />} />
+              <Route path="/Dashboard" exact element={<Home />} />
+            </Routes>
+          </Router>
+        </div>
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: {
+              fontSize: "13px",
+            },
+          }}
+        />
       </UserProvider>
     </ThemeProvider>
   );
